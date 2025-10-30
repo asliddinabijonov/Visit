@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirish</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url("{% static 'img/bg-tour.jpg' %}") center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.4);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-control {
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            width: 100%;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        h2 {
+            text-align: center;
+            color: #0d6efd;
+            margin-bottom: 25px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h2><i class="fa fa-sign-in-alt"></i> Tizimga kirish</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Foydalanuvchi nomi</label>
+            <input type="text" name="username" id="username" class="form-control" required>
+
+            <label for="password">Parol</label>
+            <input type="password" name="password" id="password" class="form-control" required>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-sign-in-alt me-1"></i> Kirish
+            </button>
+
+            <div class="text-center mt-3">
+                <small>Hali akkauntingiz yo‘qmi?
+                    <a href="{% url 'register' %}" class="text-primary fw-bold">Ro‘yxatdan o‘tish</a>
+                </small>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

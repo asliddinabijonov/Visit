@@ -8,7 +8,7 @@ from usersApp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', include('mainApp.urls')),
-    # path('users/', include('usersApp.urls')),
+    path('', include('mainApp.urls')),
+    path('users/', include('usersApp.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

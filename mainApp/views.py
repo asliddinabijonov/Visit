@@ -19,7 +19,7 @@ class HomeViews(View):
             },
             {
                 'img': 'img/carousel-3.jpg',
-                'small_title': 'Samarqand',
+                'small_title': 'Samarqand  n ',
                 'big_title': "Make Memories!",
                 'text': "Another dummy text for the third slide."
             },
